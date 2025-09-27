@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
 
@@ -18,12 +19,12 @@ class _SplashViewState extends State<SplashView>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 2),
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.bounceIn),
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
-    _animationController.forward;
+    _animationController.forward();
     // Navigator.of(context).pushReplacementNamed(AppRoutes.introRoute1);
     super.initState();
   }
@@ -39,18 +40,24 @@ class _SplashViewState extends State<SplashView>
     return Scaffold(
       body: AnimatedBuilder(
         animation: _animationController,
-        builder: (_, _) {
+        builder: (context, child) {
           return Transform.scale(
             scale: _animation.value,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                Image.asset(Assets.assetsImagesLogo),
-                const Spacer(),
-                Image.asset(Assets.assetsImagesRoutegold),
-                const Text(
-                  'Supervised by Mohamed Nabil',
-                  style: TextStyle(color: AppColors.brown, fontSize: 16),
+                Center(
+                  child: SvgPicture.asset(
+                    'assets/images/logo.svg',
+                    width: MediaQuery.sizeOf(context).width * .4,
+                  ),
+                ),
+                Positioned(
+                  bottom: 32,
+                  child: SvgPicture.asset(
+                    'assets/images/routegold.svg',
+                    width: MediaQuery.sizeOf(context).width * .4,
+                  ),
                 ),
               ],
             ),
