@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/core/app_routes.dart';
 import 'package:islamy/core/app_theme.dart';
+import 'package:islamy/views/intro/intro_view.dart';
 import 'package:islamy/views/splash/splash_view.dart';
 
 class Islamy extends StatelessWidget {
@@ -10,8 +11,11 @@ class Islamy extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.theme,
-      routes: {AppRoutes.splashRoute: (context) => const SplashView()},
-      initialRoute: AppRoutes.splashRoute,
+      routes: {
+        AppRoutes.splashRoute: (context) => const SplashView(),
+        AppRoutes.introRoute1: (context) => const IntroView(),
+      },
+      initialRoute: AppRoutes.introRoute1,
     );
   }
 }

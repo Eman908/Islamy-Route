@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:islamy/core/app_assets.dart';
-import 'package:islamy/core/app_colors.dart';
+import 'package:islamy/core/app_routes.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -25,7 +24,11 @@ class _SplashViewState extends State<SplashView>
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
     _animationController.forward();
-    // Navigator.of(context).pushReplacementNamed(AppRoutes.introRoute1);
+    Future.delayed(const Duration(seconds: 5), () {
+      if (mounted) {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.introRoute1);
+      }
+    });
     super.initState();
   }
 
