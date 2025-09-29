@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
-import 'package:islamy/views/home/tabs/quraan_tab_body.dart';
+import 'package:islamy/views/home/tabs/quraan_tab/quraan_tab_body.dart';
 
 class QuraanTab extends StatelessWidget {
   const QuraanTab({super.key});
