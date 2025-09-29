@@ -9,7 +9,7 @@ class SelectedIcon extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       decoration: BoxDecoration(
-        color: AppColors.black.withAlpha(50),
+        color: AppColors.black.withAlpha(100),
         borderRadius: BorderRadius.circular(66),
       ),
       child: ImageIcon(AssetImage(image)),

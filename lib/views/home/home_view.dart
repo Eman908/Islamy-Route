@@ -28,6 +28,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      extendBodyBehindAppBar: true,
       appBar: customAppBar(context),
       body: tabs[_currentTab],
       bottomNavigationBar: BottomNavigationBar(
