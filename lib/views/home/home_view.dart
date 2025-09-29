@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
 import 'package:islamy/core/custom_app_bar.dart';
+import 'package:islamy/views/home/models/quraan_model.dart';
 import 'package:islamy/views/home/selected_icon.dart';
 import 'package:islamy/views/home/tabs/hadith_tab.dart';
 import 'package:islamy/views/home/tabs/quraan_tab/quraan_tab.dart';
@@ -25,6 +26,12 @@ class _HomeViewState extends State<HomeView> {
     RadioTab(),
     TimeTab(),
   ];
+  @override
+  void initState() {
+    QuraanModel.getSura();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

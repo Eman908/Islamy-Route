@@ -26,6 +26,10 @@ class Assets {
   /// assets/images/bearish.png
   static const String assetsImagesBearish = "assets/images/bearish.png";
 
+  /// Assets for assetsImagesImgSurNumberFrame
+  /// assets/images/img_sur_number_frame.png
+  static const String assetsImagesImgSurNumberFrame = "assets/images/img_sur_number_frame.png";
+
   /// Assets for assetsImagesKabba
   /// assets/images/kabba.png
   static const String assetsImagesKabba = "assets/images/kabba.png";

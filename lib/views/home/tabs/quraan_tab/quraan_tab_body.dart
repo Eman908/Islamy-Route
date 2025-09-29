@@ -8,23 +8,26 @@ class QuraanTabBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 16,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: MediaQuery.sizeOf(context).height * .2),
-        const QuraanSearchBar(),
-        const Text(
-          'Suras List',
-          style: TextStyle(
-            color: AppColors.white,
-            fontFamily: 'Janna',
-            fontSize: 16,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        spacing: 16,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: MediaQuery.sizeOf(context).height * .2),
+          const QuraanSearchBar(),
+          const Text(
+            'Suras List',
+            style: TextStyle(
+              color: AppColors.white,
+              fontFamily: 'Janna',
+              fontSize: 16,
+            ),
           ),
-        ),
-        const Expanded(child: QuraanListBuilder()),
-      ],
+          const Expanded(child: QuraanListBuilder()),
+        ],
+      ),
     );
   }
 }
