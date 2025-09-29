@@ -26,7 +26,7 @@ class _SplashViewState extends State<SplashView>
     _animationController.forward();
     Future.delayed(const Duration(seconds: 5), () {
       if (mounted) {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.introRoute1);
+        Navigator.of(context).pushReplacementNamed(AppRoutes.introRoute);
       }
     });
     super.initState();
