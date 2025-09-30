@@ -4,6 +4,7 @@ import 'package:islamy/core/app_theme.dart';
 import 'package:islamy/views/home/home_view.dart';
 import 'package:islamy/views/intro/intro_view.dart';
 import 'package:islamy/views/splash/splash_view.dart';
+import 'package:islamy/views/sura_view/sura_view.dart';
 
 class Islamy extends StatelessWidget {
   const Islamy({super.key});
@@ -16,6 +17,7 @@ class Islamy extends StatelessWidget {
         AppRoutes.splashRoute: (context) => const SplashView(),
         AppRoutes.introRoute: (context) => const IntroView(),
         AppRoutes.homeRoute: (context) => const HomeView(),
+        AppRoutes.suraRoute: (context) => const SuraView(),
       },
       initialRoute: AppRoutes.homeRoute,
     );

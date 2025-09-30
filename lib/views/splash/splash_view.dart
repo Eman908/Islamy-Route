@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_routes.dart';
 
 class SplashView extends StatefulWidget {
@@ -50,15 +50,15 @@ class _SplashViewState extends State<SplashView>
               alignment: Alignment.center,
               children: [
                 Center(
-                  child: SvgPicture.asset(
-                    'assets/images/logo.svg',
+                  child: Image.asset(
+                    Assets.assetsImagesLogo,
                     width: MediaQuery.sizeOf(context).width * .4,
                   ),
                 ),
                 Positioned(
                   bottom: 32,
-                  child: SvgPicture.asset(
-                    'assets/images/routegold.svg',
+                  child: Image.asset(
+                    Assets.assetsImagesRoutegold,
                     width: MediaQuery.sizeOf(context).width * .4,
                   ),
                 ),

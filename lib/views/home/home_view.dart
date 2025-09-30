@@ -3,12 +3,12 @@ import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
 import 'package:islamy/core/custom_app_bar.dart';
 import 'package:islamy/views/home/models/quraan_model.dart';
-import 'package:islamy/views/home/selected_icon.dart';
-import 'package:islamy/views/home/tabs/hadith_tab.dart';
+import 'package:islamy/views/home/widgets/selected_icon.dart';
+import 'package:islamy/views/home/tabs/hadith_tab/hadith_tab.dart';
 import 'package:islamy/views/home/tabs/quraan_tab/quraan_tab.dart';
-import 'package:islamy/views/home/tabs/radio_tab.dart';
-import 'package:islamy/views/home/tabs/sebha_tab.dart';
-import 'package:islamy/views/home/tabs/time_tab.dart';
+import 'package:islamy/views/home/tabs/radio_tab/radio_tab.dart';
+import 'package:islamy/views/home/tabs/sebha_tab/sebha_tab.dart';
+import 'package:islamy/views/home/tabs/time_tab/time_tab.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
