@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/core/app_colors.dart';
-import 'package:islamy/views/home/models/quraan_model.dart';
-import 'package:islamy/views/home/tabs/quraan_tab/quraan_sura_card.dart';
 
 class QuraanListBuilder extends StatelessWidget {
-  const QuraanListBuilder({super.key});
-
+  const QuraanListBuilder({
+    super.key,
+    required this.itemBuilder,
+    required this.itemCount,
+  });
+  final Widget? Function(BuildContext, int) itemBuilder;
+  final int itemCount;
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
       padding: EdgeInsets.zero,
-      itemBuilder: (context, index) {
-        return QuraanSuraCard(item: QuraanModel.sura[index]);
-      },
+      itemBuilder: itemBuilder,
       separatorBuilder: (_, _) {
-        return const Divider(color: AppColors.white, indent: 60, endIndent: 60);
+        return const Divider(color: AppColors.white, indent: 40, endIndent: 40);
       },
-      itemCount: QuraanModel.sura.length,
+      itemCount: itemCount,
     );
   }
 }
