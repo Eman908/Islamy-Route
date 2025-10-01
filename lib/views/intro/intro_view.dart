@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
-import 'package:islamy/views/home/home_view.dart';
+import 'package:islamy/core/app_routes.dart';
+import 'package:islamy/core/custom_app_bar.dart';
 import 'package:islamy/views/intro/intro_widget.dart';
 import 'package:islamy/views/intro/pagination_builder.dart';
 
@@ -50,33 +51,8 @@ class _IntroViewState extends State<IntroView> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: false,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(MediaQuery.sizeOf(context).height * .2),
-        child: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          flexibleSpace: Stack(
-            alignment: Alignment.center,
-            children: [
-              Image.asset(Assets.assetsImagesMosque01, fit: BoxFit.cover),
-              const Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 16),
-                  child: Text(
-                    'Islamy',
-                    style: TextStyle(
-                      fontFamily: 'Kamali',
-                      color: AppColors.gold,
-                      fontSize: 70,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      appBar: customAppBar(context),
+
       body: Column(
         children: [
           Expanded(
@@ -120,12 +96,9 @@ class _IntroViewState extends State<IntroView> {
             onPressed: () {
               _currentPage < _pages.length - 1
                   ? setState(() => _currentPage++)
-                  : Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const HomeView();
-                      },
-                    ),
+                  : Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRoutes.homeRoute,
+                    (route) => false,
                   );
             },
             child: Text(
