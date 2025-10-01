@@ -3,6 +3,7 @@ import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
 import 'package:islamy/core/app_routes.dart';
 import 'package:islamy/views/home/models/quraan_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class QuraanSuraCard extends StatelessWidget {
   const QuraanSuraCard({super.key, required this.item});
@@ -11,6 +12,7 @@ class QuraanSuraCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        storeSuraId(item.suraNo);
         Navigator.of(context).pushNamed(AppRoutes.suraRoute, arguments: item);
       },
       child: Row(
@@ -64,5 +66,16 @@ class QuraanSuraCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> storeSuraId(int suraNo) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    List<String> mostRecent =
+        sharedPreferences.getStringList('mostRecent') ?? [];
+    if (mostRecent.contains(suraNo.toString())) {
+      mostRecent.removeWhere((e) => e == suraNo.toString());
+    }
+    mostRecent = [suraNo.toString(), ...mostRecent];
+    await sharedPreferences.setStringList("mostRecent", mostRecent);
   }
 }
