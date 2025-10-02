@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for assetsIconsIcHadeth
   /// assets/icons/ic_hadeth.png
   static const String assetsIconsIcHadeth = "assets/icons/ic_hadeth.png";
@@ -32,11 +32,13 @@ class Assets {
 
   /// Assets for assetsImagesImgLeftCorner
   /// assets/images/img_left_corner.png
-  static const String assetsImagesImgLeftCorner = "assets/images/img_left_corner.png";
+  static const String assetsImagesImgLeftCorner =
+      "assets/images/img_left_corner.png";
 
   /// Assets for assetsImagesImgSurNumberFrame
   /// assets/images/img_sur_number_frame.png
-  static const String assetsImagesImgSurNumberFrame = "assets/images/img_sur_number_frame.png";
+  static const String assetsImagesImgSurNumberFrame =
+      "assets/images/img_sur_number_frame.png";
 
   /// Assets for assetsImagesKabba
   /// assets/images/kabba.png
@@ -70,6 +72,22 @@ class Assets {
   /// assets/images/routegold.png
   static const String assetsImagesRoutegold = "assets/images/routegold.png";
 
+  /// Assets for assetsImagesSebha
+  /// assets/images/Sebha.png
+  static const String assetsImagesSebha = "assets/images/Sebha.png";
+
+  /// Assets for assetsImagesSebha head
+  /// assets/images/sebha head.png
+  static const String assetsImagesSebhahead = "assets/images/sebha head.png";
+
+  /// Assets for assetsImagesSebhaBg
+  /// assets/images/sebha_bg.png
+  static const String assetsImagesSebhaBg = "assets/images/sebha_bg.png";
+
+  /// Assets for assetsImagesSebhaBody 1
+  /// assets/images/SebhaBody 1.png
+  static const String assetsImagesSebhaBody1 = "assets/images/SebhaBody 1.png";
+
   /// Assets for assetsImagesWelcome
   /// assets/images/welcome.png
   static const String assetsImagesWelcome = "assets/images/welcome.png";
@@ -78,4 +96,3 @@ class Assets {
   /// assets/images/welcome2.png
   static const String assetsImagesWelcome2 = "assets/images/welcome2.png";
 }
-
