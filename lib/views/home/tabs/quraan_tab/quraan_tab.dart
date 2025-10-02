@@ -21,8 +21,8 @@ class QuraanTab extends StatelessWidget {
               end: Alignment.bottomCenter,
             ),
           ),
+          child: const QuraanTabBody(),
         ),
-        const QuraanTabBody(),
       ],
     );
   }
