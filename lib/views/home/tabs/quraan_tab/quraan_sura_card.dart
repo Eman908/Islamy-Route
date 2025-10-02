@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamy/core/app_assets.dart';
 import 'package:islamy/core/app_colors.dart';
 import 'package:islamy/core/app_routes.dart';
+import 'package:islamy/core/shared_prefrence.dart';
 import 'package:islamy/views/home/models/quraan_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -69,13 +70,12 @@ class QuraanSuraCard extends StatelessWidget {
   }
 
   Future<void> storeSuraId(int suraNo) async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    List<String> mostRecent =
-        sharedPreferences.getStringList('mostRecent') ?? [];
+    SharedPreferences preferences = await SharedPreferencesService.instance;
+    List<String> mostRecent = preferences.getStringList('mostRecent') ?? [];
     if (mostRecent.contains(suraNo.toString())) {
       mostRecent.removeWhere((e) => e == suraNo.toString());
     }
     mostRecent = [suraNo.toString(), ...mostRecent];
-    await sharedPreferences.setStringList("mostRecent", mostRecent);
+    await preferences.setStringList("mostRecent", mostRecent);
   }
 }

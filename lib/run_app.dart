@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/core/app_routes.dart';
 import 'package:islamy/core/app_theme.dart';
+import 'package:islamy/views/hadith_view/hadith_view.dart';
 import 'package:islamy/views/home/home_view.dart';
 import 'package:islamy/views/intro/intro_view.dart';
 import 'package:islamy/views/splash/splash_view.dart';
@@ -18,6 +19,7 @@ class Islamy extends StatelessWidget {
         AppRoutes.introRoute: (context) => const IntroView(),
         AppRoutes.homeRoute: (context) => const HomeView(),
         AppRoutes.suraRoute: (context) => const SuraView(),
+        AppRoutes.hadithRoute: (context) => const HadithView(),
       },
       initialRoute: AppRoutes.homeRoute,
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/core/app_colors.dart';
+import 'package:islamy/core/shared_prefrence.dart';
 import 'package:islamy/views/home/models/quraan_model.dart';
 import 'package:islamy/views/home/tabs/quraan_tab/most_recent_card.dart';
 import 'package:islamy/views/home/tabs/quraan_tab/quraan_list_builder.dart';
@@ -109,8 +110,8 @@ class _QuraanTabBodyState extends State<QuraanTabBody> {
 
   Future<void> _loadMostRecent() async {
     mostRecent = [];
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    var mostRecentList = sharedPreferences.getStringList('mostRecent') ?? [];
+    SharedPreferences preferences = await SharedPreferencesService.instance;
+    var mostRecentList = preferences.getStringList('mostRecent') ?? [];
     for (String suraNo in mostRecentList) {
       int number = int.parse(suraNo);
       mostRecent.add(QuraanModel.sura[(number - 1)]);
