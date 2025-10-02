@@ -13,6 +13,7 @@ class Islamy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
       routes: {
         AppRoutes.splashRoute: (context) => const SplashView(),
