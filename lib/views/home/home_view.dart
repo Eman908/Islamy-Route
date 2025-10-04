@@ -38,42 +38,57 @@ class _HomeViewState extends State<HomeView> {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: customAppBar(context),
-      body: tabs[_currentTab],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColors.gold,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: AppColors.white,
-        unselectedItemColor: AppColors.black,
-        selectedLabelStyle: const TextStyle(fontFamily: 'Janna', fontSize: 14),
-        showUnselectedLabels: false,
-        onTap: (index) {
-          _currentTab = index;
-          setState(() {});
-        },
-        currentIndex: _currentTab,
-        items: [
-          BottomNavigationBarItem(
-            icon: _buildIcon(0, Assets.assetsIconsIcQuran),
-            label: 'Quran',
-          ),
-          BottomNavigationBarItem(
-            icon: _buildIcon(1, Assets.assetsIconsIcHadeth),
 
-            label: 'Hadith',
+      body: tabs[_currentTab],
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 8,
+              offset: Offset(0, -2),
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: AppColors.gold,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: AppColors.white,
+          unselectedItemColor: AppColors.black,
+          selectedLabelStyle: const TextStyle(
+            fontFamily: 'Janna',
+            fontSize: 14,
           ),
-          BottomNavigationBarItem(
-            icon: _buildIcon(2, Assets.assetsIconsIcSebha),
-            label: 'Sebha',
-          ),
-          BottomNavigationBarItem(
-            icon: _buildIcon(3, Assets.assetsIconsIcRadio),
-            label: 'Radio',
-          ),
-          BottomNavigationBarItem(
-            icon: _buildIcon(4, Assets.assetsIconsIcTime),
-            label: 'Time',
-          ),
-        ],
+          showUnselectedLabels: false,
+          onTap: (index) {
+            _currentTab = index;
+            setState(() {});
+          },
+          currentIndex: _currentTab,
+          items: [
+            BottomNavigationBarItem(
+              icon: _buildIcon(0, Assets.assetsIconsIcQuran),
+              label: 'Quran',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildIcon(1, Assets.assetsIconsIcHadeth),
+
+              label: 'Hadith',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildIcon(2, Assets.assetsIconsIcSebha),
+              label: 'Sebha',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildIcon(3, Assets.assetsIconsIcRadio),
+              label: 'Radio',
+            ),
+            BottomNavigationBarItem(
+              icon: _buildIcon(4, Assets.assetsIconsIcTime),
+              label: 'Time',
+            ),
+          ],
+        ),
       ),
     );
   }

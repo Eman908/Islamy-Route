@@ -64,6 +64,10 @@ class Assets {
   /// assets/images/radio.png
   static const String assetsImagesRadio = "assets/images/radio.png";
 
+  /// Assets for assetsImagesRadioBg
+  /// assets/images/radio_bg.png
+  static const String assetsImagesRadioBg = "assets/images/radio_bg.png";
+
   /// Assets for assetsImagesReading
   /// assets/images/reading.png
   static const String assetsImagesReading = "assets/images/reading.png";
@@ -87,6 +91,10 @@ class Assets {
   /// Assets for assetsImagesSebhaBody 1
   /// assets/images/SebhaBody 1.png
   static const String assetsImagesSebhaBody1 = "assets/images/SebhaBody 1.png";
+
+  /// Assets for assetsImagesSoundWave 1
+  /// assets/images/soundWave 1.png
+  static const String assetsImagesSoundWave1 = "assets/images/soundWave 1.png";
 
   /// Assets for assetsImagesWelcome
   /// assets/images/welcome.png
